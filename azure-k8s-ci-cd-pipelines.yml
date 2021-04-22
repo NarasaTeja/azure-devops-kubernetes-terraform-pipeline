@@ -46,7 +46,9 @@ stages:
   - job: Deploy
     displayName: Deploy
     pool:
-      vmImage: 'ubuntu-latest'
+      name: Default
+      demands:
+       - agent.name -equals TejaPCAgent
     steps:
     - task: DownloadPipelineArtifact@2
       inputs:
@@ -57,7 +59,7 @@ stages:
     - task: KubernetesManifest@0
       inputs:
         action: 'deploy'
-        kubernetesServiceConnection: 'Azure-Kubernetes-Connection'
+        kubernetesServiceConnection: 'docker-service-connection'
         namespace: 'default'
         manifests: '$(System.ArtifactsDirectory)/configuration/kubernetes/deployment.yaml'
         containers: 'in28min/currency-exchange-devops:$(tag)'
