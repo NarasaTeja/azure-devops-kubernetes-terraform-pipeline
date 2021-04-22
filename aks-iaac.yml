@@ -1,6 +1,9 @@
 trigger:
 - master
 
+pool:
+  agentpools : Default
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
