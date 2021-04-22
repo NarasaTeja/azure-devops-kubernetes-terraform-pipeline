@@ -1,8 +1,8 @@
 trigger:
 - master
 
-agent:
-  name: 'TejaPCAgent'
+pool:
+  vmImage: 'TejaPCAgent'
 
 steps:
 - script: echo Hello, world!
