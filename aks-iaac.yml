@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  agent: 'TejaPCAgent'
+  agent: 'SelfHostedAgent'
 
 steps:
 - script: echo Hello, world!
