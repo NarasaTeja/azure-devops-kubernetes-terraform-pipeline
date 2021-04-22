@@ -2,7 +2,9 @@ trigger:
 - master
 
 pool:
-  vmImage: 'TejaPCAgent'
+  name: Default
+  demands:
+   - agent.name -equals TejaPCAgent
 
 steps:
 - script: echo Hello, world!
