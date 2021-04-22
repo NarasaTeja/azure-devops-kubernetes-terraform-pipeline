@@ -18,9 +18,14 @@ steps:
   inputs:
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
-    backendType: 'azurerm'
+    #commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publicKey.secureFilePath)'
+    backendT ype: 'azurerm'
     backendServiceArm: 'Azure'
-    ensureBackend: true'
+    ensureBackend: true
+    backendAzureRmResourceGroupName: 'backend-rg'
+    backendAzureRmResourceGroupLocation: 'westeurope'
+    backendAzureRmStorageAccountName: 'storageacntteja3596'
+    backendAzureRmContainerName: 'stgcontainer'
     backendAzureRmKey: 'kubernetes.tfstate'
 
 
