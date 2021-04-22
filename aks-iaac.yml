@@ -2,7 +2,6 @@ trigger:
 - master
 
 pool:
-  agentPools: Default
   name: 'TejaPCAgent'
 
 steps:
